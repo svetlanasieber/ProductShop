@@ -1,4 +1,4 @@
-package org.softuni.productshop.config;
+package productshop.config;
 
 import com.cloudinary.Cloudinary;
 import org.springframework.beans.factory.annotation.Value;
