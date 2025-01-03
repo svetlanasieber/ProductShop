@@ -1,4 +1,4 @@
-package productshop.config;
+package org.example.productshop.config;
 
 import com.cloudinary.Cloudinary;
 import org.springframework.beans.factory.annotation.Value;
