@@ -1,4 +1,4 @@
-package productshop.config;
+package org.example.productshop.config;
 
 import org.junit.Before;
 import org.modelmapper.ModelMapper;
