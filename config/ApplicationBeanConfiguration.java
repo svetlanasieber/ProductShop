@@ -1,4 +1,4 @@
-package org.softuni.productshop.config;
+package productshop.config;
 
 import org.junit.Before;
 import org.modelmapper.ModelMapper;
