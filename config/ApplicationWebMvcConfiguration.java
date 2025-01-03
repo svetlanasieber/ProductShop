@@ -1,4 +1,4 @@
-package productshop.config;
+package org.example.productshop.config;
 
 import org.softuni.productshop.web.interceptors.FaviconInterceptor;
 import org.softuni.productshop.web.interceptors.TitleInterceptor;
