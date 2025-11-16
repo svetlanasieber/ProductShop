@@ -27,7 +27,6 @@
             Console.WriteLine(result);
         }
 
-        // Problem 01
         public static string ImportUsers(ProductShopContext context, string inputJson)
         {
             string result = string.Empty;
@@ -41,7 +40,7 @@
                 {
                     if (!IsValid(userDto))
                     {
-                        // Here we have full control how to act in case of validation error
+                        
                         continue;
                     }
 
@@ -57,7 +56,7 @@
                         userAge = parsedAge;
                     }
 
-                    // Manual Mapping
+                  
                     User user = new User()
                     {
                         FirstName = userDto.FirstName,
@@ -77,7 +76,7 @@
             return result;
         }
 
-        // Problem 02
+      
         public static string ImportProducts(ProductShopContext context, string inputJson)
         {
             string result = string.Empty;
@@ -155,7 +154,7 @@
             return result;
         }
 
-        // Problem 03
+      
         public static string ImportCategories(ProductShopContext context, string inputJson)
         {
             string result = string.Empty;
@@ -172,7 +171,7 @@
                         continue;
                     }
 
-                    // CategoryDTO.Name is not null here!
+                   
                     Category category = new Category()
                     {
                         Name = categoryDto.Name!,
@@ -190,7 +189,7 @@
             return result;
         }
 
-        // Problem 04
+     
         public static string ImportCategoryProducts(ProductShopContext context, string inputJson)
         {
             string result = string.Empty;
@@ -221,7 +220,7 @@
                     bool isCategoryIdValid = int
                         .TryParse(catProdDto.CategoryId, out int categoryId);
 
-                    // Don't forget to check if this Ids will not violate the FK constraint!!!
+                 
                     if ((!isProductIdValid) || (!isCategoryIdValid))
                     {
                         continue;
@@ -245,7 +244,7 @@
             return result;
         }
 
-        // Problem 05
+   
         public static string GetProductsInRange(ProductShopContext context)
         {
             var products = context
@@ -275,7 +274,7 @@
             return jsonResult;
         }
 
-        // Problem 06
+       
         public static string GetSoldProducts(ProductShopContext context)
         {
             var usersWithSoldProducts = context
@@ -314,13 +313,13 @@
             return jsonResult;
         }
 
-        // Problem 08
+      
         public static string GetUsersWithProducts(ProductShopContext context)
         {
             var usersWithSoldProducts = context
                 .Users
                 .Where(u => u.ProductsSold
-                    .Any(p => p.BuyerId.HasValue))
+                .Any(p => p.BuyerId.HasValue))
                 .Select(u => new
                 {
                     u.FirstName,
@@ -363,7 +362,7 @@
             return jsonResult;
         }
 
-        // Helper method
+     
         private static bool IsValid(object dto)
         {
             var validateContext = new ValidationContext(dto);
@@ -375,4 +374,5 @@
             return isValid;
         }
     }
+
 }
